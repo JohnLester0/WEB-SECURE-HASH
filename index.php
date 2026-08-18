@@ -60,6 +60,14 @@
             margin-top: 15px;
         }
 
+     a{
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #2f6f7e;
+            font-size: 14px;
+        }
+
         button {
             width: 100%;
             padding: 12px;
@@ -120,7 +128,7 @@
            <label>Confirm Password:</label>
            <input type="password" name="confirm_password" required>
        </div>
-
+        <a href = "login.php">Do you already have an account? Login here.</a>
        <button type="submit" name="register">Register</button>
    </form>
 
