@@ -30,6 +30,10 @@
             margin-bottom: 25px;
         }
 
+        .form-group {
+            margin-bottom: 15px;
+        }
+
         label {
             font-weight: bold;
             color: #555;
@@ -38,7 +42,8 @@
 
         input[type="text"],
         input[type="email"],
-        input[type="password"] {
+        input[type="password"],
+        input[type="number"] {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -47,7 +52,13 @@
             box-sizing: border-box;
             font-size: 14px;
         }
-
+        
+        input[type="radio"] {
+            margin-right: 5px;
+            accent-color: #2f6f7e;
+            margin-bottom: 15px ;
+            margin-top: 15px;
+        }
 
         button {
             width: 100%;
@@ -71,9 +82,31 @@
    <form action="register.php" method="POST">
        <h2>Registration Form</h2>
 <div class="form-group">
-           <label>Full Name:</label>
-           <input type="text" name="fullname" required>
+           <label>First Name:</label>
+           <input type="text" name="firstname" required>
       </div>
+
+      <div class="form-group">
+           <label>Last Name:</label>
+           <input type="text" name="lastname" required>
+      </div>
+<div class="form-group">
+           <label>Middle Name:</label>
+           <input type="text" name="middlename" required>
+      </div> 
+
+<div class="form-group">
+           <label>Age:</label>
+           <input type="number" name="age" required>
+      </div>
+
+      <div class="form-group">
+           <label>Gender:</label>
+           <input type="radio" name="gender" value="male" required> Male
+           <input type="radio" name="gender" value="female" required> Female    
+           <input type="radio" name="gender" value="other" required> Other
+      </div>
+
       <div class="form-group">
            <label>Email:</label>
            <input type="email" name="email" required>
@@ -83,9 +116,10 @@
            <input type="password" name="password" required>
        </div>
 
+       <div class="form-group">
            <label>Confirm Password:</label>
            <input type="password" name="confirm_password" required>
-       
+       </div>
 
        <button type="submit" name="register">Register</button>
    </form>

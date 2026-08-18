@@ -63,10 +63,10 @@
 <body>
 
     <div class="welcome-box">
-        <h1>Welcome!</h1>
-        <h2>You have successfully logged in.</h2>
+        <h1>Error!</h1>
+        <h2>Email already exsist.</h2>
         <p>This is a secure web that uses Php and SQL to store users data only in localhost.</p>
-        <a href="logout.php">Logout</a> 
+        <a href="index.php">Logout</a> 
     </div>
 
 </body>
