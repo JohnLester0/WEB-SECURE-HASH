@@ -66,7 +66,7 @@
         <h1>Error!</h1>
         <h2>Email already exsist.</h2>
         <p>This is a secure web that uses Php and SQL to store users data only in localhost.</p>
-        <a href="index.php">Logout</a> 
+        <a href="index.php">back</a> 
     </div>
 
 </body>
