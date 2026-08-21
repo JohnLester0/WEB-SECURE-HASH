@@ -56,15 +56,24 @@
             border-color: #2f6f7e;
             box-shadow: 0 0 4px rgba(47, 111, 126, 0.5);
         }
-        a{
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: #2f6f7e;
-           
-            font-size: 14px;
-        }
+    p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-top: 15px;
+    }
 
+    p a {
+    color: #2f6f7e;
+    font-weight: bold;
+    text-decoration: none;
+    
+}
+
+    p a:hover {
+    text-decoration: underline;
+    }
+    
         button {
             width: 100%;
             padding: 12px;
@@ -96,7 +105,7 @@
             <label>Password:</label>
             <input type="password" name="password" required>
         </div>
-       <a href = "index.php">Don't have an account? Register here.</a>
+       <p>Don't have an account?<a href = "index.php"> Register here.</a></p>
         <button type="submit" name="login">Login</button>
     </form>
 

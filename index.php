@@ -60,13 +60,22 @@
             margin-top: 15px;
         }
 
-     a{
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: #2f6f7e;
-            font-size: 14px;
-        }
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-top: 15px;
+}
+
+p a {
+    color: #2f6f7e;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    p a:hover {
+    text-decoration: underline;
+    }
 
         button {
             width: 100%;
@@ -128,7 +137,7 @@
            <label>Confirm Password:</label>
            <input type="password" name="confirm_password" required>
        </div>
-        <a href = "login.php">Do you already have an account? Login here.</a>
+        <p>Do you already have an account?<a href = "login.php"> Login here.</a></p>
        <button type="submit" name="register">Register</button>
    </form>
 

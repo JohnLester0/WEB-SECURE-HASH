@@ -3,7 +3,8 @@
 
 declare(strict_types=1);
 
-session_start();require 'db.php';
+session_start();
+require 'db.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -23,7 +24,7 @@ if (strlen($email) > 255 || !is_string($password)) {
     exit('Invalid request.');
 }
 
-$stmt = $conn->prepare('SELECT firstname, lastname, password FROM users WHERE email = ? LIMIT 1');
+$stmt = $conn->prepare('SELECT id, firstname, lastname, password FROM users WHERE email = ? LIMIT 1');
 if (!$stmt) {
     http_response_code(500);
     exit('Unable to sign in right now.');
@@ -40,7 +41,7 @@ if (!$user || !password_verify($password, $user['password'])) {
 }
 
 session_regenerate_id(true);
-$_SESSION['user_email'] = $user['email'];
+$_SESSION['user_id'] = (int) $user['id'];
 $_SESSION['fullname'] = $user['firstname'] . ' ' . $user['lastname'];
 
 header('Location: Welcome.php');

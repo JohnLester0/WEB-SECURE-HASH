@@ -26,8 +26,8 @@ if (isset($_POST["register"])) {
 
     $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
     $check->bind_param("s", $email); 
-    $check->execute();
-    $result = $check->get_result();
+   $check->execute();
+   $result = $check->get_result();
 
    if ($result->num_rows > 0) {
        header("Location: alredyexixt.php");
