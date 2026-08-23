@@ -24,7 +24,7 @@ if (strlen($email) > 255 || !is_string($password)) {
     exit('Invalid request.');
 }
 
-$stmt = $conn->prepare('SELECT id, firstname, lastname, password FROM users WHERE email = ? LIMIT 1');
+$stmt = $conn->prepare('SELECT id, firstname, lastname, middlename, password FROM users WHERE email = ? LIMIT 1');
 if (!$stmt) {
     http_response_code(500);
     exit('Unable to sign in right now.');
@@ -42,7 +42,8 @@ if (!$user || !password_verify($password, $user['password'])) {
 
 session_regenerate_id(true);
 $_SESSION['user_id'] = (int) $user['id'];
-$_SESSION['fullname'] = $user['firstname'] . ' ' . $user['lastname'];
+$_SESSION['fullname'] = $user['firstname'] . ' ' . $user['lastname'] . ' ' . $user['middlename'];
 
 header('Location: Welcome.php');
 exit;
+?>
